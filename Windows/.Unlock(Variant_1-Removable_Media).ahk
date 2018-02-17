@@ -36,6 +36,8 @@ Icon_1=%In_Dir%\UnLock.ico
 
 ; (Note that for Mac, TrueCrypt Portable would not work. An installed copy must be available.)
 
+; ** USB Flash Drive (Container) version **
+
 #NoTrayIcon
 
 RegRead,OSver,HKLM,SOFTWARE\Microsoft\Windows NT\CurrentVersion,CurrentVersion
