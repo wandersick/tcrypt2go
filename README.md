@@ -5,4 +5,4 @@ With this set of tools, anyone can turn any existing unsecured USB stick or hard
 
 Supported platforms: Windows XP to Windows 10; Mac OS X (beta)
 
-Looking for VeraCrypt? vCrypt2Go based on VeraCrypt is under works.
+Looking for VeraCrypt? vCrypt2Go based on VeraCrypt is under works at https://github.com/wandersick/vcrypt2go/
