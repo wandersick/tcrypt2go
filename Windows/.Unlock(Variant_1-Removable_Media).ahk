@@ -21,6 +21,8 @@ Icon_1=%In_Dir%\UnLock.ico
 * * * Compile_AHK SETTINGS END * * *
 */
 
+; ** For UAC to elevate properly, use HighestAvailable (Execution_Level=3) **
+
 ; Part of tCrypt2Go Lock-and-Unlock Utilities by wandersick
 ; Script filename: .Unlock.ahk
 ; Output filename: .Unlock.exe
