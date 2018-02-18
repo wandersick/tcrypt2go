@@ -19,11 +19,17 @@ cd "$dirPath"
 if ls /Applications/TrueCrypt.app; then
 	/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt --auto-mount=devices --force
 else
-	cp -rf './TrueCrypt.pkg' "$TMPDIR"
-	osascript -e 'tell app "System Events" to activate'	
-	osascript -e 'tell app "System Events" to display dialog "TrueCrypt not detected. It will be installed now." buttons ("OK") default button 1 with icon 0'
-	osascript -e "do shell script \"./tc_silent_setup.command\" with administrator privileges"
-	/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt --auto-mount=devices --force
+	if ls './TrueCrypt.pkg'; then
+		cp -rf './TrueCrypt.pkg' "$TMPDIR"
+		osascript -e 'tell app "System Events" to activate'	
+		osascript -e 'tell app "System Events" to display dialog "TrueCrypt not detected. It will be installed now." buttons ("OK") default button 1 with icon 0'
+		osascript -e "do shell script \"./tc_silent_setup.command\" with administrator privileges"
+		/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt --auto-mount=devices --force
+	else
+		osascript -e 'tell app "System Events" to activate'	
+		osascript -e 'tell app "System Events" to display dialog "TrueCrypt is required. Please install it first." buttons ("OK") default button 1 with icon 0'
+		open './TrueCrypt for Mac/'
+	fi
 fi
 
 # less aggressive than killall, but requires confirmation
