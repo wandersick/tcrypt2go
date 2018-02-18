@@ -27,7 +27,7 @@ mountTC () {
 dirPath=`dirname "$0"`
 cd "$dirPath"
 
-# mount TrueCrypt volumes. A maximum of 3 USB sticks are supported concurrently
+# mount TrueCrypt volumes. A maximum of 3 USB sticks will be supported concurrently
 
 # check if TrueCrypt is installed. If not, install it. Otherwise, mount container (requires installed TrueCrypt)
 
@@ -36,11 +36,17 @@ cd "$dirPath"
 if ls /Applications/TrueCrypt.app; then
 	mountTC
 else
-	cp -rf './TrueCrypt.pkg' "$TMPDIR"
-	osascript -e 'tell app "System Events" to activate'	
-	osascript -e 'tell app "System Events" to display dialog "TrueCrypt not detected. It will be installed now." buttons ("OK") default button 1 with icon 0'
-	osascript -e "do shell script \"./tc_silent_setup.command\" with administrator privileges"
-	mountTC
+	if ls './TrueCrypt.pkg'; then
+		cp -rf './TrueCrypt.pkg' "$TMPDIR"
+		osascript -e 'tell app "System Events" to activate'	
+		osascript -e 'tell app "System Events" to display dialog "TrueCrypt not detected. It will be installed now." buttons ("OK") default button 1 with icon 0'
+		osascript -e "do shell script \"./tc_silent_setup.command\" with administrator privileges"
+		mountTC
+	else
+		osascript -e 'tell app "System Events" to activate'	
+		osascript -e 'tell app "System Events" to display dialog "TrueCrypt is required. Please install it first." buttons ("OK") default button 1 with icon 0'
+		open './TrueCrypt for Mac/'
+	fi
 fi
 
 # less aggressive than killall, but requires confirmation
