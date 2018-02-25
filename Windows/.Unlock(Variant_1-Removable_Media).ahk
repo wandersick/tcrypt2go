@@ -6,8 +6,8 @@ Exe_File=%In_Dir%\.Unlock.exe
 Execution_Level=3
 [VERSION]
 Set_Version_Info=1
-Company_Name=a wandersick
-File_Description=Open Protected Drive (TrueCrypt Container)
+Company_Name=wandersick
+File_Description=Open Protected Drive (Container) via tCrypt2Go
 File_Version=2.0.0.0
 Inc_File_Version=0
 Internal_Name=Unlock

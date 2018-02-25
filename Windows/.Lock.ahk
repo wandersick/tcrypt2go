@@ -6,8 +6,8 @@ Exe_File=%In_Dir%\.Lock.exe
 Execution_Level=3
 [VERSION]
 Set_Version_Info=1
-Company_Name=a wandersick
-File_Description=Close Protected Drive
+Company_Name=wandersick
+File_Description=Close Protected Drive via tCrypt2Go
 File_Version=2.0.0.0
 Inc_File_Version=0
 Internal_Name=Lock
