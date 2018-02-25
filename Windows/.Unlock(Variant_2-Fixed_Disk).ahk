@@ -6,7 +6,7 @@ Exe_File=%In_Dir%\.Unlock.exe
 Execution_Level=3
 [VERSION]
 Set_Version_Info=1
-Company_Name=wandersick
+Company_Name=a wandersick
 File_Description=Open Protected Drive (Partition) via tCrypt2Go
 File_Version=2.0.0.0
 Inc_File_Version=0
@@ -16,7 +16,7 @@ Original_Filename=Unlock
 Product_Name=Unlock
 Product_Version=2.0.0.0
 [ICONS]
-Icon_1=%In_Dir%\UnLock.ico
+Icon_1=%In_Dir%\Unlock.ico
 
 * * * Compile_AHK SETTINGS END * * *
 */
